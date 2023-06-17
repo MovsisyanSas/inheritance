@@ -287,6 +287,31 @@ public:
 };
 
 int main() {
-	animal* ptr = new parrot;
-	ptr->display();
+	animal* Bird = new bird;
+	animal* Land = new LandDweller;
+	animal* Fish = new fish;
+	animal* Ishxan = new ishxan;
+	animal* Shark = new shark;
+	animal* Lion = new lion;
+	animal* Rabbit = new rabbit;
+	animal* Parrot = new parrot;
+	animal* Eagle = new eagle;
+
+	animal** arr = new animal * [9];
+	arr[0] = Bird;
+	arr[1] = Land;
+	arr[2] = Fish;
+	arr[3] = Ishxan;
+	arr[4] = Shark;
+	arr[5] = Lion;
+	arr[6] = Rabbit;
+	arr[7] = Parrot;
+	arr[8] = Eagle;
+
+	for (int i = 0; i < 9; i++)
+	{
+		arr[i]->display();
+		std::cout << std::endl;
+		std::cout << std::endl;
+	}
 }
