@@ -14,10 +14,24 @@ public:
 		mouth = ",mouth";
 		ears = ",ears";
 	}
-	void display() {
+	virtual void display() {
 		std::cout << ability << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << std::endl;
+	}
+	animal(const animal& obj) {
+		this->ability = obj.ability;
+		this->heart = obj.heart;
+		this->eye = obj.eye;
+		this->mouth = obj.mouth;
+		this->ears = obj.ears;
+	}
+	animal& operator = (const animal& obj) {
+		this->ability = obj.ability;
+		this->heart = obj.heart;
+		this->eye = obj.eye;
+		this->mouth = obj.mouth;
+		this->ears = obj.ears;
 	}
 };
 
@@ -40,6 +54,20 @@ public:
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << gills << scale << caviar << std::endl;
 	}
+	fish(const fish& obj) {
+		this->gills = obj.gills;
+		this->scale = obj.scale;
+		this->slime = obj.slime;
+		this->caviar = obj.caviar;
+		this->FishAbility = obj.FishAbility;
+	}
+	fish& operator = (const fish& obj) {
+		this->gills = obj.gills;
+		this->scale = obj.scale;
+		this->slime = obj.slime;
+		this->caviar = obj.caviar;
+		this->FishAbility = obj.FishAbility;
+	}
 };
 
 class LandDweller : public animal {
@@ -60,6 +88,20 @@ public:
 		std::cout << ability << LandDwellerAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << teeth << legs << hand << hair << std::endl;
+	}
+	LandDweller(const LandDweller& obj) {
+		this->LandDwellerAbility = obj.LandDwellerAbility;
+		this->teeth = obj.teeth;
+		this->legs = obj.legs;
+		this->hand = obj.hand;
+		this->hair = obj.hair;
+	}
+	LandDweller& operator = (const LandDweller& obj) {
+		this->LandDwellerAbility = obj.LandDwellerAbility;
+		this->teeth = obj.teeth;
+		this->legs = obj.legs;
+		this->hand = obj.hand;
+		this->hair = obj.hair;
 	}
 };
 
@@ -82,6 +124,20 @@ public:
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << wing << legs << feather << beak << std::endl;
 	}
+	bird(const bird& obj) {
+		this->BirdAbility = obj.BirdAbility;
+		this->wing = obj.wing;
+		this->legs = obj.legs;
+		this->feather = obj.feather;
+		this->beak = obj.beak;
+	}
+	bird& operator = (const bird& obj) {
+		this->BirdAbility = obj.BirdAbility;
+		this->wing = obj.wing;
+		this->legs = obj.legs;
+		this->feather = obj.feather;
+		this->beak = obj.beak;
+	}
 };
 
 class ishxan : public fish {
@@ -94,6 +150,12 @@ public:
 		std::cout << ability << FishAbility << ishxanAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << gills << scale << caviar << std::endl;
+	}
+	ishxan(const ishxan& obj) {
+		this->ishxanAbility = obj.ishxanAbility;
+	}
+	ishxan& operator = (const ishxan& obj) {
+		this->ishxanAbility = obj.ishxanAbility;
 	}
 };
 
@@ -112,6 +174,16 @@ public:
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << gills << scale << caviar << teeth << hugeTail << std::endl;
 	}
+	shark(const shark& obj) {
+		this->sharkAbility = obj.sharkAbility;
+		this->teeth = obj.teeth;
+		this->hugeTail = obj.hugeTail;
+	}
+	shark& operator = (const shark& obj) {
+		this->sharkAbility = obj.sharkAbility;
+		this->teeth = obj.teeth;
+		this->hugeTail = obj.hugeTail;
+	}
 };
 
 class lion : public LandDweller {
@@ -128,6 +200,16 @@ public:
 		std::cout << ability << LandDwellerAbility << lionAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << teeth << legs << hand << hair << milk << muscles << std::endl;
+	}
+	lion(const lion& obj) {
+		this->lionAbility = obj.lionAbility;
+		this->milk = obj.milk;
+		this->muscles = obj.muscles;
+	}
+	lion& operator = (const lion& obj) {
+		this->lionAbility = obj.lionAbility;
+		this->milk = obj.milk;
+		this->muscles = obj.muscles;
 	}
 };
 
@@ -146,6 +228,16 @@ public:
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << teeth << legs << hand << hair << wool << longTeeth << std::endl;
 	}
+	rabbit(const rabbit& obj) {
+		this->rabbitAbility = obj.rabbitAbility;
+		this->wool = obj.wool;
+		this->longTeeth = obj.longTeeth;
+	}
+	rabbit& operator = (const rabbit& obj) {
+		this->rabbitAbility = obj.rabbitAbility;
+		this->wool = obj.wool;
+		this->longTeeth = obj.longTeeth;
+	}
 };
 
 class eagle : public bird {
@@ -161,45 +253,40 @@ public:
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << wing << legs << feather << beak << claw << std::endl;
 	}
+	eagle(const eagle& obj) {
+		this->eagleAbility = obj.eagleAbility;
+		this->claw = obj.claw;
+	}
+	eagle& operator = (const eagle& obj) {
+		this->eagleAbility = obj.eagleAbility;
+		this->claw = obj.claw;
+	}
 };
 
 class parrot : public bird {
 public:
 	std::string parrotAbility;
-	std::string colorfulWool;
+	std::string colorfulFeather;
 	parrot() {
 		parrotAbility = ",colorful, friendly, speaks in human lanuages, funny";
-		colorfulWool = ",colorfulWool";
+		colorfulFeather = ",colorful feather";
 	}
 	void display() {
 		std::cout << ability << BirdAbility << parrotAbility << std::endl;
 		std::cout << std::endl;
-		std::cout << "parts of body: " << heart << eye << mouth << ears << wing << legs << feather << beak << colorfulWool << std::endl;
+		std::cout << "parts of body: " << heart << eye << mouth << ears << wing << legs << feather << beak << colorfulFeather << std::endl;
+	}
+	parrot(const parrot& obj) {
+		this->parrotAbility = obj.parrotAbility;
+		this->colorfulFeather = obj.colorfulFeather;
+	}
+	parrot& operator = (const parrot& obj) {
+		this->parrotAbility = obj.parrotAbility;
+		this->colorfulFeather = obj.colorfulFeather;
 	}
 };
 
 int main() {
-	animal Animal;
-	bird Bird;
-	fish Fish;
-	LandDweller landDweller;
-	ishxan Ishxan;
-	shark Shark;
-	lion Lion;
-	rabbit Rabiit;
-	parrot Parrot;
-	eagle Eagle;
-
-	//uncomment as you wish with ctrl + k + u
-
-	//Animal.display();
-	//Bird.display();
-	//Fish.display();
-	//landDweller.display();
-	//Ishxan.display();
-	//Shark.display();
-	//Lion.display();
-	//Rabiit.display();
-	//Parrot.display();
-	//Eagle.display();
+	animal* ptr = new parrot;
+	ptr->display();
 }
