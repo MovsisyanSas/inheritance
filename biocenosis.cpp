@@ -180,12 +180,12 @@ public:
 		ishxanAbility = ",lives in Sevan, endemic, red colored";
 		IshxanMovement = "swimming";
 	}
-	void display() override final {
+	void display() final {
 		std::cout << ability << FishAbility << ishxanAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << gills << scale << caviar << std::endl;
 	}
-	void move() override final {
+	void move() final {
 		std::cout << IshxanMovement << std::endl;
 	}
 	ishxan(const ishxan& obj) {
@@ -194,7 +194,7 @@ public:
 	ishxan& operator = (const ishxan& obj) {
 		this->ishxanAbility = obj.ishxanAbility;
 	}
-	~ishxan() override final {
+	~ishxan() final {
 		std::cout << "ishxan class destructor" << std::endl;
 	}
 };
@@ -211,12 +211,12 @@ public:
 		hugeTail = ",huge tail";
 		SharkMovement = "swimming";
 	}
-	void display() override final {
+	void display() final {
 		std::cout << ability << FishAbility << sharkAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << gills << scale << caviar << teeth << hugeTail << std::endl;
 	}
-	void move() override final {
+	void move() final {
 		std::cout << SharkMovement << std::endl;
 	}
 	shark(const shark& obj) {
@@ -229,7 +229,7 @@ public:
 		this->teeth = obj.teeth;
 		this->hugeTail = obj.hugeTail;
 	}
-	~shark() override final {
+	~shark() final {
 		std::cout << "shark class destructor" << std::endl;
 	}
 };
@@ -246,12 +246,12 @@ public:
 		muscles = ",muscles";
 		LionMovement = "walking/running/jumping";
 	}
-	void display() override final {
+	void display() final {
 		std::cout << ability << LandDwellerAbility << lionAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << teeth << legs << hand << hair << milk << muscles << std::endl;
 	}
-	void move() override final {
+	void move() final {
 		std::cout << LionMovement << std::endl;
 	}
 	lion(const lion& obj) {
@@ -264,7 +264,7 @@ public:
 		this->milk = obj.milk;
 		this->muscles = obj.muscles;
 	}
-	~lion() override final {
+	~lion() final {
 		std::cout << "lion class destructor" << std::endl;
 	}
 };
@@ -281,12 +281,12 @@ public:
 		longTeeth = ",long teeth";
 		RabbitMovement = "walking/running/jumping";
 	}
-	void display() override final {
+	void display() final {
 		std::cout << ability << LandDwellerAbility << rabbitAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << teeth << legs << hand << hair << wool << longTeeth << std::endl;
 	}
-	void move() override final {
+	void move() final {
 		std::cout << RabbitMovement << std::endl;
 	}
 	rabbit(const rabbit& obj) {
@@ -299,7 +299,7 @@ public:
 		this->wool = obj.wool;
 		this->longTeeth = obj.longTeeth;
 	}
-	~rabbit() override final {
+	~rabbit() final {
 		std::cout << "rabbit class destructor" << std::endl;
 	}
 };
@@ -314,12 +314,12 @@ public:
 		claw = ",claw";
 		EagleMovement = "Flying";
 	}
-	void display() override final {
+	void display() final {
 		std::cout << ability << BirdAbility << eagleAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << wing << legs << feather << beak << claw << std::endl;
 	}
-	void move() override final {
+	void move() final {
 		std::cout << EagleMovement << std::endl;
 	}
 	eagle(const eagle& obj) {
@@ -330,7 +330,7 @@ public:
 		this->eagleAbility = obj.eagleAbility;
 		this->claw = obj.claw;
 	}
-	~eagle() override final {
+	~eagle() final {
 		std::cout << "eagle class destructor" << std::endl;
 	}
 };
@@ -345,12 +345,12 @@ public:
 		colorfulFeather = ",colorful feather";
 		ParrotMovement = "Flying";
 	}
-	void display() override final {
+	void display() final {
 		std::cout << ability << BirdAbility << parrotAbility << std::endl;
 		std::cout << std::endl;
 		std::cout << "parts of body: " << heart << eye << mouth << ears << wing << legs << feather << beak << colorfulFeather << std::endl;
 	}
-	void move() override final {
+	void move() final {
 		std::cout << ParrotMovement << std::endl;
 	}
 	parrot(const parrot& obj) {
@@ -361,7 +361,7 @@ public:
 		this->parrotAbility = obj.parrotAbility;
 		this->colorfulFeather = obj.colorfulFeather;
 	}
-	~parrot() override final {
+	~parrot() final {
 		std::cout << "parrot class destructor" << std::endl;
 	}
 };
